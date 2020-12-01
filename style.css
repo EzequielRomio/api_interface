@@ -7,8 +7,8 @@ body {
 	background-color: #aaa;
 	background-image: url(glasses_img.png);
 	background-repeat: no-repeat;
-	background-size: 80% 80%;
-	background-position: 50% 100%;
+	/*background-size: 80% 80%;*/
+	background-position: 50% 200px;
 	font-family: "roboto-italic";
 	font-size: 25px;
 	text-align: center; 
@@ -19,7 +19,6 @@ hr {
 	width: 650px;
 	margin-left: 20%;
 	border-color: #000;
-	
 }
 
 
@@ -29,13 +28,22 @@ h4 {
 }
 
 
+footer {
+	color: #aaa;
+	background-color: #303030;
+	text-align: right;
+	margin: 180px 0px 0px 0px;
+}
+
 
 #title {
-	width: 450px;
+	border: 5px solid #020eac;
+	text-shadow: 5px 5px #121ebc; 
+	width: 448px;
 	margin-left: 25%;
 	background-color: #323edc;
 	color: #ddd;
-	height: 70px;
+	height: 72px;
 	line-height: 70px;
 }
 
@@ -53,4 +61,21 @@ h4 {
 
 .myClass {
 /* crea una clase de estilo aplicable a cualquier tag */
+}
+
+
+.circle {
+	border-radius: 50%;
+	display: inline-block;
+	background: #121ebc;
+	width: 16px;
+	height: 16px;
+}
+
+
+.links {
+	font-family: arial;
+	color: #121ebc;
+	text-align: left;
+	margin-left: 166px;
 }
