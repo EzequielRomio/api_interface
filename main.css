@@ -5,10 +5,10 @@
 
 body {
 	background-color: #aaa;
-	background-image: url(glasses_img.png);
+	background-image: url("glasses_img.png");
 	background-repeat: no-repeat;
-	/*background-size: 80% 80%;*/
-	background-position: 50% 200px;
+	background-position: 85% 250px;
+	background-size: 1082.7px 451.1px;
 	font-family: "roboto-italic";
 	font-size: 25px;
 	text-align: center; 
@@ -83,4 +83,8 @@ a {
 .links {
 	text-align: left;
 	margin-left: 166px;
+}
+
+.background {
+	opacity: 0.5;
 }
