@@ -48,11 +48,14 @@ ul {
 	opacity: 0.8;
 	margin-top: 50px;
 	background-color: #ccc;
-	width: 450px;
+	background-image: url("prescription.png");
+	background-size: 25% 25%;
+	background-position: 0% 97%;
+	background-repeat: no-repeat;
+	width: 500px;
 	margin-left: 5%;
 	height: 500px;
-	border-left: 8px dashed #303030;
-	
+	border: 4px solid #101010;
 /* Aplica exclusivamente al id container */
 }
 
