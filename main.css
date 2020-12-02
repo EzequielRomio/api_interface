@@ -41,6 +41,17 @@ a {
 	font-family: arial;
 }
 
+ul {
+	text-align: left;
+}
+
+#mainTitle {
+	width: 700px;
+}
+
+#hrMainTitle {
+	width: 900px;
+}
 
 .container {
 	opacity: 0.8;
@@ -87,4 +98,8 @@ a {
 
 .background {
 	opacity: 0.5;
+}
+
+.listContainer {
+	padding: 50px;
 }
