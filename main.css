@@ -35,23 +35,14 @@ footer {
 	margin: 180px 0px 0px 0px;
 }
 
-
 a {
 	color: #121ebc;
-	font-family: arial;
 }
 
 ul {
 	text-align: left;
 }
 
-#mainTitle {
-	width: 700px;
-}
-
-#hrMainTitle {
-	width: 900px;
-}
 
 .container {
 	opacity: 0.8;
@@ -90,11 +81,6 @@ ul {
 	height: 16px;
 }
 
-
-.links {
-	text-align: left;
-	margin-left: 166px;
-}
 
 .background {
 	opacity: 0.5;

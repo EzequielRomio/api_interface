@@ -1,0 +1,17 @@
+a {
+	font-family: arial;
+}
+
+
+#mainTitle {
+	width: 700px;
+}
+
+#hrMainTitle {
+	width: 900px;
+}
+
+.links {
+	text-align: left;
+	margin-left: 166px;
+}
