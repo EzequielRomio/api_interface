@@ -36,18 +36,13 @@ footer {
 }
 
 
-#title {
-	border: 5px solid #020eac;
-	text-shadow: 5px 5px #121ebc; 
-	width: 448px;
-	margin-left: 25%;
-	background-color: #323edc;
-	color: #ddd;
-	height: 72px;
-	line-height: 70px;
+a {
+	color: #121ebc;
+	font-family: arial;
 }
 
-#container {
+
+.container {
 	opacity: 0.8;
 	margin-top: 50px;
 	background-color: #ccc;
@@ -64,6 +59,18 @@ footer {
 }
 
 
+.title {
+	border: 5px solid #020eac;
+	text-shadow: 5px 5px #121ebc; 
+	width: 448px;
+	margin-left: 25%;
+	background-color: #323edc;
+	color: #ddd;
+	height: 72px;
+	line-height: 70px;
+}
+
+
 .circle {
 	border-radius: 50%;
 	display: inline-block;
@@ -74,8 +81,6 @@ footer {
 
 
 .links {
-	font-family: arial;
-	color: #121ebc;
 	text-align: left;
 	margin-left: 166px;
 }
