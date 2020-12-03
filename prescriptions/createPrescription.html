@@ -4,55 +4,59 @@
 	<meta charset="utf-8"/>
 	<title>Cargar Receta nueva</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
+	<link rel="stylesheet" type="text/css" href="prescriptions.css">
 </head>
 <body>
-	<div align="center">
-	<h2>Cargar receta</h2>
+	<h1 class="title">Recetas</h1>
+	<hr>
+	<div class="container" id="createPrescription">
+		<h2>Cargar receta</h2>
 
-	<form>
-		
-		<label>Número de Usuario</label>
-		<br>
-		<input type="number" name="user_id">
-		<br>
+		<form>
+			
+			<label>Número de Usuario</label>
+			<br>
+			<input type="number" name="user_id">
+			<br>
 
 
-		<label>Fecha de la receta</label>
-		<br>
-		<input type="text" name="prescription_date">
-		<br>
+			<label>Fecha de la receta</label>
+			<br>
+			<input type="text" name="prescription_date">
+			<br>
 
-		<label>Ojo Derecho</label>
-		<br>
-		<input type="text" name="od">
-		<br>
+			<label>Ojo Derecho</label>
+			<br>
+			<input type="text" name="od">
+			<br>
+			
+			<label>Ojo Izquierdo</label>
+			<br>
+			<input type="text" name="oi">
+			<br>
 
-		<label>Ojo Izquierdo</label>
-		<br>
-		<input type="text" name="oi">
-		<br>
+			<label>Add</label>
+			<br>
+			<input type="text" name="addition">
+			<br>
 
-		<label>Add</label>
-		<br>
-		<input type="text" name="addition">
-		<br>
+			<label>Observaciones</label>
+			<br>
+			<input type="text" name="notes">
+			<br>
 
-		<label>Observaciones</label>
-		<br>
-		<input type="text" name="notes">
-		<br>
-
-		<label>Médico/a</label>
-		<br>
-		<input type="text" name="doctor">
-		<br>
-		<br>
-
-		<a href="prescriptionsMenu.html">
-			<button>ENVIAR</button>
-		</a>
-	
-	</form>
+			<label>Médico/a</label>
+			<br>
+			<input type="text" name="doctor">
+			<br>
+			<br>
+			<br>
+			
+			<a href="prescriptionsMenu.html">
+				<button class="buttonEnviar">Enviar</button>
+			</a>
+			
+		</form>
 	</div>
 </body>
 </html>
