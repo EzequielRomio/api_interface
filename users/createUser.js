@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	    .then(function(res) {
 	      	
 	      	if(res.status==200) {
-	        	document.getElementById('postResult').innerHTML = 'El nuevo Post ha sido almacenado con id: ' + res.data.id;
+	        	document.getElementById('postResult').innerHTML = 'El Usuario ha sido creado con Nº de id: ' + res.data.id;
 	      	}
 	    })
 	    

@@ -4,13 +4,15 @@
 	<title>Ver datos de Usuario</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
-	<script type="text/javascript" src="../main.js"></script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="showUser.js"></script>
 </head>
 <body>
 	
 	<h1 class="title">Usuarios</h1>
     <hr>
-    <div class="container">
+    <div class="container" id="userData">
 		<h2>Datos de Usuario</h2>
 
 		<label for="user_id">Ingrese el numero de Usuario</label>

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         		for (let x=0; x<headers.length; x++){
         			let field = document.createElement("th");
         			let value = document.createTextNode(res.data[i][headers[x]]);
-           			field.appendChild(value)
+           		field.appendChild(value)
         			row.appendChild(field)
 
            		};
