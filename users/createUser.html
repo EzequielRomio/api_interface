@@ -4,7 +4,8 @@
 	<title>Crear usuario</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
-	<script type="text/javascript" src="../main.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="createUser.js"></script>
 </head>
 <body>
 	
@@ -12,35 +13,35 @@
     <hr>
     <div class="container">
 		<h2>Crear Usuario</h2>
-		<form>
-			<label>Nombre</label>
-			<br>
-			<input type="text"/>
-			<br>
+		
+		<label>Nombre</label>
+		<br>
+		<input type="text" id="name"/>
+		<br>
 
-			<label>Apellido</label>
-			<br>
-			<input type="text"/>
-			<br>
+		<label>Apellido</label>
+		<br>
+		<input type="text" id="last_name"/>
+		<br>
 
-			<label>Correo Electrónico</label>
-			<br>
-			<input type="text"/>
-			<br>
+		<label>Correo Electrónico</label>
+		<br>
+		<input type="text" id="email"/>
+		<br>
 
-			<label>Contraseña</label>
-			<br>
-			<input type="password"/>
-			<br>
+		<label>Contraseña</label>
+		<br>
+		<input type="password" id="password"/>
+		<br>
 
-			<br>
-			<br>
-			<a href="usersMenu.html">
-				<button class="buttonEnviar">ENVIAR</button>
-			</a>
-		</form>
+		<br>
+		<br>
+		
+		<button class="buttonEnviar" id="enviarUser">ENVIAR</button>
+			
+		
 	</div>
-
+	<h5 id="postResult"></h5>
     <h3>
     	<a href="../index.html">Volver al menú</a>
     </h3>

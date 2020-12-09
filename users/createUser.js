@@ -63,55 +63,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	    })
 	    
 	    .catch(function(err) {
-	     	console.log(err);
+	    	if (err.response.status === 400) {
+	     	alert('Faltan completar campos escenciales!');
+	     	};
+	     	
 	    })
 	    
 	    .then(function() {
-	     	console.log('none');
 	    });
 		
-		/*
-		var postData = JSON.stringify(newUser.getItems());
-		console.log(typeof postData)
-		var serverUrl = "http://localhost:5000/users";
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-			    var queryResult = JSON.parse(this.responseText);
-				console.log(queryResult)   
-			    document.getElementById("demo").innerHTML = queryResult.values;
-			};
-		};	
-
-		xmlhttp.open("POST", serverUrl, true);
-		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xmlhttp.send(postData);
-		*/
 		
 	});
 		
 
-	/*
-	const userIdInput = document.getElementById('userIdInput');
-	userIdInput.addEventListener('keydown', function(e) {
-		if (e.keyCode === 13) {
-			console.log(userIdInput.value)
-			var serverUrl = "http://localhost:5000/users/" + userIdInput.value.toString();
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-				    var queryResult = JSON.parse(this.responseText);
-					console.log(queryResult)   
-				    document.getElementById("demo").innerHTML = queryResult.keys;
-				};
-  			};	
-
-			xmlhttp.open("GET", serverUrl, true);
-			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xmlhttp.send();
-
-		};
-	});
-	*/
-
+	
 });

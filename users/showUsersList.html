@@ -2,17 +2,31 @@
 <html>
 <head>
 	<title>Ver lista de Usuarios</title>
+	
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
-	<script type="text/javascript" src="../main.js"></script>
+	
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="showUsersList.js"></script>
+	
 </head>
 <body>
 	
 	<h1 class="title">Usuarios</h1>
     <hr>
-    <div class="container">
+    <div class="container" id="usersList">
 		<h2>Lista de Usuarios</h2>
+		<table id="usersListTable">
+			<tr class="headers">
+				<th>Nº de Usuario</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Correo Electrónico</th>
+				<th>Fecha</th>
+			</tr>
+		</table>
 	</div>
+	
 
     <h3>
     	<a href="../index.html">Volver al menú</a>
