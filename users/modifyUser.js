@@ -20,7 +20,30 @@ var newUser = {
 				email: this.email,
 				password: this.password
 		}
+	},
+
+	getFieldsToModify: function() {
+		var fieldsToModify = {
+
+				name: this.name,
+				last_name: this.last_name,
+				email: this.email,
+				password: this.password
+
+		}
+
+		for (k in fieldsToModify) {
+			console.log(k);
+			if (!(Boolean(fieldsToModify.k))) {
+				console.log(k)
+				delete fieldsToModify.k;
+			};
+		}; 
+
+		return fieldsToModify;
+
 	}
+
 };
 
 

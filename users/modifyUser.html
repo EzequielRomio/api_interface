@@ -4,7 +4,9 @@
 	<title>Modificar datos de Usuario</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
-	<script type="text/javascript" src="../main.js"></script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="modifyUser.js"></script>
 </head>
 <body>
 	<h1 class="title">Usuarios</h1>
@@ -15,29 +17,29 @@
 		
 		<label>Nombre</label>
 		<br>
-		<input type="text"/>
+		<input type="text" id="name"/>
 		<br>
-		
+
 		<label>Apellido</label>
 		<br>
-		<input type="text"/>
+		<input type="text" id="last_name"/>
 		<br>
 
 		<label>Correo Electrónico</label>
 		<br>
-		<input type="text"/>
+		<input type="text" id="email"/>
 		<br>
 
 		<label>Contraseña</label>
 		<br>
-		<input type="password"/>
+		<input type="password" id="password"/>
 		<br>
 
 		<br>
 		<br>
-		<a href="usersMenu.html">
-			<button class="buttonEnviar">Enviar</button>
-		</a>
+		
+		<button class="buttonEnviar" id="enviarUser">ENVIAR</button>
+		
 		
 
 	</div>

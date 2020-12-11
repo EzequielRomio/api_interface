@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	const email = document.getElementById("email")
 	const date = document.getElementById("date")
 	 	
-		
+	let buttonPressed = false;
+
 	userIdInput.addEventListener('keydown', function(e) {
-		if (e.keyCode === 13) {
+		if (e.keyCode === 13 && !buttonPressed) {
 			let url = 'http://localhost:5000/users/' + userIdInput.value.toString()
-		
+			buttonPressed = true;
 			axios.get(url, { responseType: 'json'})
 		    
 
@@ -25,22 +26,47 @@ document.addEventListener("DOMContentLoaded", function() {
 		      		lastName.innerHTML = data["last_name"];
 		      		email.innerHTML = data["email"];
 		      		date.innerHTML = data["date"];
+		    		
+
+		      		confirmButton = document.createElement("button");
+		      		confirmButton.setAttribute("type", "button");
+		      		confirmButton.className = "buttonEnviar";
+		      		confirmButton.innerHTML = "Eliminar Usuario nº " + userIdInput.value.toString();
+		      		confirmButton.style.width = "480px";
+		      		confirmButton.style.marginTop = "20px";
+		      		deleteUser = document.getElementById("deleteUser");
+		      		deleteUser.appendChild(confirmButton);
+
+		      		confirmButton.addEventListener('click', function(e) {
+
+			        	axios.delete(url, {responseType: 'json'})
+		        	
+		        		.then(function(res2) {
+		        			if (res2.status == 200) {
+
+		        				alert("Usuario Eliminado");
+		        				location.reload();
+		        			}
+		        		})
+
+		        	})
 		        }
+		    
+				
 		    })
 		    
 		    .catch(function(err) {
-		    	if (err.response.status === 404) {
-		    		alert("Nº de Usuario inválido");
-		    	}
 		     	console.log(err);
 		    })
 		    
-		    .then(function() {
-		     	console.log('none');
-		    });
 		
 		
+		} else if (buttonPressed) { 
+
+			location.reload()
+
 		}
+		
 		
 	});
 		

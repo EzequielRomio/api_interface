@@ -1,7 +1,6 @@
 table {
-	margin-top: 20px;
 	border-collapse: collapse;
-	width: 100%;
+	width: 100.1%;
 }
 
 td, th {
@@ -44,4 +43,18 @@ tr:nth-child(even) {
 
 #userData {
 	width: 90%;
+	height: 500px;
+}
+
+#userIdInput {
+	margin-bottom: 20px;
+}
+
+#deleteUser {
+	width: 90%;
+	height: 500px;
+}
+
+#deleteTable {
+	margin-top: 40px;
 }

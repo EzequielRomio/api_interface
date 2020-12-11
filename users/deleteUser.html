@@ -4,14 +4,35 @@
 	<title>Eliminar usuario</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
-	<script type="text/javascript" src="../main.js"></script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="deleteUser.js"></script>
 </head>
 <body>
 	
 	<h1 class="title">Usuarios</h1>
     <hr>
-    <div class="container">
+    <div class="container" id="deleteUser">
 		<h2>Eliminar usuario</h2>
+
+		<label for="user_id">Ingrese el numero de Usuario</label>
+		<input type="number" name="user_id" id="userIdInput" min="1">
+		<table id="deleteTable">
+			<tr class="headers">
+				<th>Nº de Usuario</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Correo Electrónico</th>
+				<th>Fecha de Ingreso</th>
+			</tr>
+			<tr>
+				<th id="userId"></th>
+				<th id="name"></th>
+				<th id="last_name"></th>
+				<th id="email"></th>
+				<th id="date"></th>
+			</tr>
+		</table>
 	</div>
 
     <h3>
