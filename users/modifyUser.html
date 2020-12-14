@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Modificar datos de Usuario</title>
+	<title>Eliminar usuario</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
 
@@ -9,42 +9,40 @@
 	<script type="text/javascript" src="modifyUser.js"></script>
 </head>
 <body>
+	
 	<h1 class="title">Usuarios</h1>
     <hr>
+    <div class="container" id="modifyUser">
+		<h2>Modificar Datos de usuario</h2>
 
-	<div class="container">
-		<h2>Modificar Datos de Usuario</h2>
-		
-		<label>Nombre</label>
-		<br>
-		<input type="text" id="name"/>
-		<br>
+		<label for="user_id">Ingrese el numero de Usuario</label>
+		<input type="number" name="user_id" id="userIdInput" min="1">
+		<table id="modifyTable">
+			<tr class="headers">
+				<th>Nº de Usuario</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Correo Electrónico</th>
+				<th>Contraseña</th>
+			</tr>
+			<tr>
+				<th id="userId"></th>
+				<th id="name"></th>
+				<th id="last_name"></th>
+				<th id="email"></th>
+				<th id="password"></th>
+			</tr>
+			<tr>
+				<th id="userId">Complete los <br>campos a modificar</th>
+				<th id="name"><input type="text" id="newName" class="modifyInput" disabled></th>
+				<th id="last_name"><input type="text" id="newLastName" class="modifyInput" disabled></th>
+				<th id="email"><input type="text" id="newEmail" class="modifyInput" disabled></th>
+				<th id="date"><input type="password" id="newPassword" class="modifyInput" disabled></th>
+			</tr>
 
-		<label>Apellido</label>
-		<br>
-		<input type="text" id="last_name"/>
-		<br>
-
-		<label>Correo Electrónico</label>
-		<br>
-		<input type="text" id="email"/>
-		<br>
-
-		<label>Contraseña</label>
-		<br>
-		<input type="password" id="password"/>
-		<br>
-
-		<br>
-		<br>
-		
-		<button class="buttonEnviar" id="enviarUser">ENVIAR</button>
-		
-		
-
+		</table>
 	</div>
 
-    
     <h3>
     	<a href="../index.html">Volver al menú</a>
     </h3>
@@ -58,7 +56,7 @@
 	<h3>
 		<a href="usersMenu.html">Volver a Usuarios</a>
 	</h3>
-    
+
 	
 </body>
 </html>

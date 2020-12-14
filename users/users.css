@@ -14,9 +14,16 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+
 .headers {
 	background-color: #727efc;
 }
+
+.modifyInput {
+	width: 96%;
+
+}
+
 
 #createUser {
 	opacity: 0.8;
@@ -57,4 +64,15 @@ tr:nth-child(even) {
 
 #deleteTable {
 	margin-top: 40px;
+}
+
+#modifyTable {
+	margin-top: 40px;
+	margin-bottom: 160px;
+}
+
+
+#modifyUser {
+	height: 100%;
+	width: 90%;
 }

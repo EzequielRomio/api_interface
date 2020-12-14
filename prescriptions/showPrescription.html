@@ -5,14 +5,69 @@
 	<title>Ver Receta</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="prescriptions.css">
-	<script type="text/javascript" src="../main.js"></script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="showPrescription.js"></script>
 </head>
 <body>
 	<h1 class="title">Recetas</h1>
 	<hr>
 
-	<div class="container">
+	<div class="container" id="prescriptionData">
 		<h2>Ver receta</h2>
+
+		<label for="user_id">Buscar por número de Usuario</label>
+		<input type="number" name="user_id" id="userIdInput" min="1">
+		<br>
+		<label for="prescription_id">Buscar por número de Receta</label>
+		<input type="number" name="prescription_id" id="prescriptionIdInput" min="1">
+
+
+		<table id="deleteTable">
+			<tr class="headers">
+				<th>Nº de Receta</th>
+				<th>Fecha de Ingreso</th>
+				<th>Nº de Usuario</th>
+				<th>Médico</th>
+				<th>Fecha en la Receta</th>
+			</tr>
+
+			<tr>
+				<th id="prescription_id"></th>
+				<th id="prescription_date"></th>
+				<th id="user_id"></th>
+				<th id="doctor"></th>
+				<th id="created_date"></th>
+			</tr>
+
+		</table>
+
+		<br>
+		<table>
+			<tr class="headers">
+				<th class="graduation">Ojo Derecho</th>
+				<th class="graduation">Ojo Izquierdo</th>
+				<th class="graduation">Adición</th>
+			</tr>
+			<tr>
+				<th class="graduation" id="od"></th>
+				<th class="graduation"  id="oi"></th>
+				<th class="graduation"  id="addition"></th>
+			</tr>
+			
+		</table>
+		<br>
+		<table id="notesTable">
+			<tr class="headers">
+				<th id="notesFrame">Observaciones</th>
+			</tr>
+			<tr id="notesFrame">
+				<th id="notes"></th>
+			</tr>
+			
+
+		</table>
+
 
 	</div>
 

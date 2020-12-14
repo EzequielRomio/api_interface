@@ -5,7 +5,8 @@
 	<title>Cargar Receta nueva</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="prescriptions.css">
-	<script type="text/javascript" src="../main.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="createPrescription.js"></script>
 </head>
 <body>
 	<h1 class="title">Recetas</h1>
@@ -16,45 +17,44 @@
 	
 		<label>Número de Usuario</label>
 		<br>
-		<input type="number" name="user_id">
+		<input type="number" id="user_id">
 		<br>
 
 
 		<label>Fecha de la receta</label>
 		<br>
-		<input type="text" name="prescription_date">
+		<input type="text" id="prescription_date">
 		<br>
 
 		<label>Ojo Derecho</label>
 		<br>
-		<input type="text" name="od">
+		<input type="text" id="od">
 		<br>
 		
 		<label>Ojo Izquierdo</label>
 		<br>
-		<input type="text" name="oi">
+		<input type="text" id="oi">
 		<br>
 
 		<label>Add</label>
 		<br>
-		<input type="text" name="addition">
+		<input type="text" id="addition">
 		<br>
 
 		<label>Observaciones</label>
 		<br>
-		<input type="text" name="notes">
+		<input type="text" id="notes">
 		<br>
 
 		<label>Médico/a</label>
 		<br>
-		<input type="text" name="doctor">
+		<input type="text" id="doctor">
 		<br>
 		<br>
 		<br>
 		
-		<a href="prescriptionsMenu.html">
-			<button class="buttonEnviar">ENVIAR</button>
-		</a>
+		<button class="buttonEnviar" id="enviarPrescription">ENVIAR</button>
+		
 		
 		
 	</div>

@@ -1,105 +1,108 @@
-var newUser = {
-	name: '',
-	last_name: '',
-	email: '',
-	password: '',
-	setValues: function(name, last_name, email, password) {
-		this.name = name;
-		this.last_name = last_name;
-		this.email = email;
-		this.password = password;
-	},
-	showValues: function(){
-		console.log(this.name, this.last_name, this.email);
-	},
-	getItems: function() {
-		return {
-				
-				name: this.name,
-				last_name: this.last_name,
-				email: this.email,
-				password: this.password
-		}
-	},
+function enableInputs () {
+	newName.removeAttribute("disabled");
+	newLastName.removeAttribute("disabled");
+	newEmail.removeAttribute("disabled");
+	newPassword.removeAttribute("disabled");
+}
 
-	getFieldsToModify: function() {
-		var fieldsToModify = {
-
-				name: this.name,
-				last_name: this.last_name,
-				email: this.email,
-				password: this.password
-
-		}
-
-		for (k in fieldsToModify) {
-			console.log(k);
-			if (!(Boolean(fieldsToModify.k))) {
-				console.log(k)
-				delete fieldsToModify.k;
-			};
-		}; 
-
-		return fieldsToModify;
-
+function getDataToModify () {
+	var userToModify = {
+		name: newName.value,
+		last_name: newLastName.value,
+		email: newEmail.value,
+		password: newPassword.value
 	}
 
-};
 
+	for (field in userToModify) {
+		if (!userToModify[field]) {
+			delete userToModify[field]
+		}
+	}
+
+	return userToModify
+}
 
 document.addEventListener("DOMContentLoaded", function() {
 	
-	const buttonEnviar = document.querySelector('.buttonEnviar')
+	const userIdInput = document.getElementById("userIdInput")
 	
-	buttonEnviar.addEventListener('mouseover', function () {
-		buttonEnviar.style.backgroundColor = "#626edc";
-	});
+	const userId = document.getElementById("userId")
+	const name = document.getElementById("name")
+	const lastName = document.getElementById("last_name")
+	const email = document.getElementById("email")
+	const password = document.getElementById("password")
 	
-	buttonEnviar.addEventListener('mouseout', function () {
-		buttonEnviar.style.backgroundColor = "#323edc";
+	const newName = document.getElementById("newName")
+	const newLastName = document.getElementById("newLastName")
+	const newEmail = document.getElementById("newEmail")
+	const newPassword = document.getElementById("newPassword")
+
+
+	let buttonPressed = false;
+
+	userIdInput.addEventListener('keydown', function(e) {
+		if (e.keyCode === 13 && !buttonPressed) {
+			let url = 'http://localhost:5000/users/' + userIdInput.value.toString()
+			buttonPressed = true;
+			axios.get(url, { responseType: 'json'})
+		    
+
+		    .then(function(res) {
+		      	
+		      	if(res.status==200) {
+		      		let data = res.data
+		      		userId.innerHTML = data["id"];
+		      		name.innerHTML = data["name"];
+		      		lastName.innerHTML = data["last_name"];
+		      		email.innerHTML = data["email"];
+		      		password.innerHTML = "* * * * * * * *";
+		    		
+
+		      		confirmButton = document.createElement("button");
+		      		confirmButton.setAttribute("type", "button");
+		      		confirmButton.className = "buttonEnviar";
+		      		confirmButton.innerHTML = "Modificar Usuario nº " + userIdInput.value.toString();
+		      		confirmButton.style.width = "480px";
+		      		confirmButton.style.marginBottom = "60px";
+		      		deleteUser = document.getElementById("modifyUser");
+		      		deleteUser.appendChild(confirmButton);
+
+		      		enableInputs();
+
+		      		confirmButton.addEventListener('click', function(e) {
+
+		      			let dataToModify = getDataToModify()
+
+			        	axios.put(url, dataToModify)
+		        	
+		        		.then(function(res2) {
+		        			if (res2.status == 200) {
+
+		        				alert("Usuario Modificado");
+		        				location.reload();
+		        			}
+		        		})
+
+		        	})
+		        }
+		    
+				
+		    })
+		    
+		    .catch(function(err) {
+		     	console.log(err);
+		    })
+		    
+		
+		
+		} else if (buttonPressed) { 
+
+			location.reload()
+
+		}
+		
+		
 	});
-
-	//const userData = document.getElementById('createUserForm');
-	const enviarUser = document.getElementById('enviarUser');
 		
-	enviarUser.addEventListener('click', function(){
-		
-		newUser.setValues(
-			document.getElementById('name').value, 
-			document.getElementById('last_name').value, 
-			document.getElementById('email').value, 
-			document.getElementById('password').value
-			);	
-		newUser.showValues();
-		console.log(newUser.getItems());
-
-		postData = newUser.getItems();
-
-		axios.post('http://localhost:5000/users', postData)
-    
-
-	    .then(function(res) {
-	      	
-	      	if(res.status==200) {
-	        	//document.getElementById('postResult').innerHTML = 'El Usuario ha sido creado con Nº de id: ' + res.data.id;
-	      		alert('El Usuario ha sido creado con Nº de id: ' + res.data.id);
-	      		location.reload();
-	      	}
-	    })
-	    
-	    .catch(function(err) {
-	    	if (err.response.status === 400) {
-	     	alert('Faltan completar campos escenciales!');
-	     	};
-	     	
-	    })
-	    
-	    .then(function() {
-	    });
-		
-		
-	});
-		
-
-	
 });
