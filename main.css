@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200&display=swap');
 
 body {
-	background-color: #aaa;
-	background-image: url("glasses_img.png");
+	background-color: #fff;
+	/*background-image: url("glasses_img.png");
 	background-repeat: no-repeat;
 	background-position: 85% 250px;
-	background-size: 1082.7px 451.1px;
+	background-size: 1082.7px 451.1px;*/
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 25px;
 	text-align: center; 
