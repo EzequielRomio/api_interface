@@ -26,25 +26,32 @@ hr {
 
 
 footer {
-	color: #eee;
 	background-color: #3d4afd;
 	text-align: right;
 	margin-top: 80px;
 	border-top: 2px solid #121ebc;
 }
 
-a {
-	color: #121ebc;
+#footer {
+	color: #eee;
 }
+
+ 
+a {
+	text-decoration: none;
+} 
+
 
 ul {
 	text-align: left;
 }
 
+/* 
 h2 {
-	text-shadow: 2px 2px #aaa;/*#121ebc;*/
+	text-shadow: 2px 2px #aaa;#121ebc;
 	text-decoration: overline;
-}
+} 
+*/
 
 form {
 	text-align: left;
@@ -78,6 +85,7 @@ input {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	/* line-height: 70px; */
+	margin-bottom: 80px;
 	border-bottom: 2px solid #121ebc;
 }
 
