@@ -26,12 +26,11 @@ hr {
 
 
 footer {
-	color: #aaa;
-	background-color: rgb(138, 136, 136);
+	color: #eee;
+	background-color: #3d4afd;
 	text-align: right;
-	/* margin: 180px 0px 0px 0px; */
-
-	margin-top: 200px;
+	margin-top: 80px;
+	border-top: 2px solid #121ebc;
 }
 
 a {
@@ -67,13 +66,13 @@ input {
 
 
 .title {
-	text-shadow: 2px 2px #121ebc; 
-	background-color: #323edc;
+	text-shadow: 2px 2px #121dbc; 
+	background-color: #3d4afd;
 	background-image: url("logo.png");
 	background-repeat: no-repeat;
 	background-position: 0% 0%;
 	/* height: 86px; */
-	color: #ddd; 
+	color: #fff; 
 	margin: 0%;
 	text-align: center;
 	padding-top: 20px;
