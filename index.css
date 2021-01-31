@@ -1,12 +1,22 @@
 
 #mainPage {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	background-color: #eee;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+#separator-line {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	width: 4px;
+	background-color: #ccc;
 }
 
 .main-page-links {
 	padding: 5% 5% 0% 5%;
 	color: #000;
-	background-color: #eee;
-	border: 1px solid #808080;
 }
+
+
