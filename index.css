@@ -1,18 +1,12 @@
-/*a {
-	font-family: arial;
-}
-*/
-/*
-#mainTitle {
-	width: 700px;
-}
-*/
-#hrMainTitle {
-	width: 900px;
+
+#mainPage {
+	display: flex;
+	justify-content: space-around;
 }
 
-/* 
-.links {
-	text-align: left;
-	margin-left: 166px;
-} */
+.main-page-links {
+	padding: 5% 5% 0% 5%;
+	color: #000;
+	background-color: #eee;
+	border: 1px solid #808080;
+}
