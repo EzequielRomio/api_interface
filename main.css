@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200&display=swap');
 
 body {
+	margin: 12px 0px 4px 0px;
 	background-color: #fff;
 	/*background-image: url("glasses_img.png");
 	background-repeat: no-repeat;
@@ -56,7 +57,7 @@ input {
 .title {
 	text-shadow: 2px 2px #121dbc; 
 	background-color: #3d4afd;
-	background-image: url("logo.png");
+	background-image: url("images/logo.png");
 	background-repeat: no-repeat;
 	background-position: 0% 0%;
 	/* height: 86px; */
