@@ -24,6 +24,12 @@ tr:nth-child(even) {
 
 }
 
+.links-separator {
+	width: 3px;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color: #ccc;
+}
 
 #createUser {
 	opacity: 0.8;
