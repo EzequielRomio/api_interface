@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200&display=swap');
 
 body {
-	margin: 12px 0px 4px 0px;
+	margin: 0px 0px 0px 0px;
 	background-color: #fff;
 	/*background-image: url("glasses_img.png");
 	background-repeat: no-repeat;
@@ -9,8 +9,7 @@ body {
 	background-size: 1082.7px 451.1px;*/
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 25px;
-	text-align: center; 
-/* Aplica sobre el tag llamado */
+	text-align: center;
 }
 
 
@@ -24,8 +23,12 @@ footer {
 
 a {
 	text-decoration: none;
+	color: #323edc;
 } 
 
+hr {
+	margin: 180px 0px 0px 0px;
+}
 
 ul {
 	text-align: left;
@@ -45,7 +48,7 @@ input {
 .container {
 	/* margin-left: 10px;
 	margin-right: 10px; */
-	margin-top: 50px;
+	margin-top: 40px;
 	padding-top: 100px;
 	padding-bottom: 100px;
 	background-color: #ccc;
@@ -55,19 +58,21 @@ input {
 
 
 .title {
+	position: fixed;
+	top: 0px;
+	width: 100%;
 	text-shadow: 2px 2px #121dbc; 
 	background-color: #3d4afd;
 	background-image: url("images/logo.png");
 	background-repeat: no-repeat;
 	background-position: 0% 0%;
-	/* height: 86px; */
 	color: #fff; 
 	margin: 0%;
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	/* line-height: 70px; */
-	margin-bottom: 80px;
+	/* margin-bottom: 180px; */
 	border-bottom: 2px solid #121ebc;
 }
 
@@ -80,11 +85,17 @@ input {
 .buttonEnviar {
 	color: #fff;
 	background-color: #323edc;
-	font-family: "roboto-italic";
 	font-size: 24px;
 	width: 230px;
-	height: 36px;
+	height: 48px;
 	border: 2px solid #020eac;
+}
+
+.button-return {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 28px;
+	margin: 20px 0px 20px 0px;
 }
 
 #footer-link {
