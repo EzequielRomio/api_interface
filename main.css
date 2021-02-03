@@ -98,6 +98,22 @@ input {
 	margin: 20px 0px 20px 0px;
 }
 
+.menu {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #eee;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding: 40px 12px 40px 12px;
+}
+
+.links-separator {
+	width: 3px;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color: #ccc;
+}
+
 #footer-link {
 	color: #eee;
 }
