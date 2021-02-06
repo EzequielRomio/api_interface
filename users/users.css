@@ -91,3 +91,9 @@ tr:nth-child(even) {
 	margin-right: 8px;
 	padding: 40px 12px 40px 12px;
 }
+
+#create-user-subtitle {
+	background-image: url("../images/create_user.png");
+	background-repeat: no-repeat;
+	background-position: 88% 0%;
+}

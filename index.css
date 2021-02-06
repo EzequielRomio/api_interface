@@ -3,9 +3,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	background-color: #eee;
-	margin-left: 40px;
-	margin-right: 40px;
-	margin-bottom: 40px;
+	margin: 100px 40px 40px 40px;
 }
 
 #separator-line {
