@@ -2,6 +2,13 @@
 	height: 680px;
 }
 
+#create-prescription-subtitle {
+	background-image: url("../images/create_prescription.png");
+	background-repeat: no-repeat;
+	background-position: 86% 25%;
+	background-size: 12%;
+}
+
 #modifyPrescription {
 	height: 640px;
 }
