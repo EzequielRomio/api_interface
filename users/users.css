@@ -17,17 +17,6 @@
 }
 
 
-#modifyTable {
-	margin-top: 40px;
-	margin-bottom: 160px;
-}
-
-
-#modifyUser {
-	height: 100%;
-	width: 90%;
-}
-
 #users-menu {
 	display: flex;
 	justify-content: space-evenly;
@@ -64,7 +53,20 @@
 	background-size: 14%;
 }
 
+#modify-user-subtitle {
+	background-image: url("../images/modify_user.png");
+	background-repeat: no-repeat;
+	background-position: 86% 50%;
+	background-size: 9%;
+}
+
+
 #deleteButton {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#modifyButton {
 	margin-top: 40px;
 	margin-bottom: 40px;
 }

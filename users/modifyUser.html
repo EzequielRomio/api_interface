@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Eliminar usuario</title>
+	<title>Modificar usuario</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="users.css">
 
@@ -13,9 +13,10 @@
 	<h1 class="title">Usuarios</h1>
     <hr>
     <div class="container" id="modifyUser">
-		<h2>Modificar Datos de usuario</h2>
+		<h2 class="subtitle" id="modify-user-subtitle">modificar Usuario</h2>
 
 		<label for="user_id">Ingrese el numero de Usuario</label>
+		<br>
 		<input type="number" name="user_id" id="userIdInput" min="1">
 		<table id="modifyTable">
 			<tr class="headers">
@@ -41,21 +42,22 @@
 			</tr>
 
 		</table>
+	
+		<div id="modifyButton"></div>
+		<br>
+		<a href="../index.html" class="button-return">
+			<span>Volver al menú</span>
+		</a>
+		<br>
+		<a href="../prescriptions/prescriptionsMenu.html" class="button-return">
+			<span>Ir a Recetas</span>
+		</a>
+		<br>
+		<a href="usersMenu.html" class="button-return">
+			<span>Volver a Usuarios</span>
+		</a>
+
 	</div>
-
-    <h3>
-    	<a href="../index.html">Volver al menú</a>
-    </h3>
-    
-
-    <h3>
-    	<a href="../prescriptions/prescriptionsMenu.html">Ir a Recetas</a>
-	</h3>
-
-
-	<h3>
-		<a href="usersMenu.html">Volver a Usuarios</a>
-	</h3>
 
 	<footer><a href="https://github.com/EzequielRomio" target="_blank" id="footer-link">Creado por Ezequiel Romio</a>&nbsp; &nbsp; &nbsp; &nbsp; </footer>
 
