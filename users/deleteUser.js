@@ -1,3 +1,12 @@
+function parseDate(dateStr) {
+	// sample 2020-11-23 16:26:12
+	let dateSchedule = dateStr.split(" ");
+	let splitedDate = dateSchedule[0].split("-");
+	result = splitedDate[2] + '/' + splitedDate[1] + '/' + splitedDate[0] + ' ';
+	result += dateSchedule[1]
+	return result;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 	
 	const userIdInput = document.getElementById("userIdInput")
@@ -25,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		      		name.innerHTML = data["name"];
 		      		lastName.innerHTML = data["last_name"];
 		      		email.innerHTML = data["email"];
-		      		date.innerHTML = data["date"];
+					let parsedDate = parseDate(data["date"]);  
+					date.innerHTML = parsedDate;
 		    		
 
 		      		confirmButton = document.createElement("button");
@@ -34,7 +44,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		      		confirmButton.innerHTML = "Eliminar Usuario nº " + userIdInput.value.toString();
 		      		confirmButton.style.width = "480px";
 		      		confirmButton.style.marginTop = "20px";
-		      		deleteUser = document.getElementById("deleteUser");
+
+					confirmButton.addEventListener('mouseover', function () {
+						confirmButton.style.backgroundColor = "#626edc";
+					});
+					
+					confirmButton.addEventListener('mouseout', function () {
+						confirmButton.style.backgroundColor = "#323edc";
+					});
+				
+					deleteUser = document.getElementById("deleteButton");
 		      		deleteUser.appendChild(confirmButton);
 
 		      		confirmButton.addEventListener('click', function(e) {
