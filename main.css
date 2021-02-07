@@ -140,3 +140,27 @@ input {
 #footer-link {
 	color: #eee;
 }
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	background-color: #e6e6e6;
+	font-size: 18px;
+}
+
+td, th {
+	border: 1px solid #101010;
+	text-align: left;
+	padding: 8px;
+}
+
+
+tr:nth-child(even) {
+	background-color: #fff;
+}
+
+
+.headers {
+	background-color: #727efc;
+	font-size: 24px;
+}
