@@ -14,30 +14,75 @@
 	<hr>
 
 	<div class="container" id="prescriptionData">
-		<h2>Ver receta</h2>
+		<h2 class="subtitle" id="show-prescription-subtitle">Ver receta</h2>
 
 		<label for="user_id">Buscar por número de Usuario</label>
+		<br>
 		<input type="number" name="user_id" id="userIdInput" min="1">
 		<br>
 		<label for="prescription_id">Buscar por número de Receta</label>
+		<br>
 		<input type="number" name="prescription_id" id="prescriptionIdInput" min="1">
+		<br>
 
-
+		<table id="userData">
+			<tr class="headers">
+				<th>Usuario</th>
+				<th>N°</th>
+			</tr>
+			<tr>
+				<th id="userName">Ezequiel Romio</th>
+				<th id="user_id">8</th>
+			</tr>
+		</table>
+		
 		<table id="deleteTable">
 			<tr class="headers">
-				<th>Nº de Receta</th>
 				<th>Fecha de Ingreso</th>
+				<th>Rec Nº</th>
+				
+				
+				<th>Ojo Derecho</th>
+				<th>Ojo Izquierdo</th>
+				<th>Adición</th>
+				<th>Fecha en la Receta</th>
+				<th id="notesFrame">Observaciones</th>
+				<th>Médico</th>
+			</tr>
+
+			<tr>
+				<th id="created_date"></th>
+				<th id="prescription_id"></th>
+				
+				
+				<th class="graduation" id="od"></th>
+				<th class="graduation" id="oi"></th>
+				<th class="graduation" id="addition"></th>
+				<th id="prescription_date"></th>
+				<th id="notes"></th>
+				<th id="doctor"></th>
+			</tr>
+			
+
+		</table>
+
+
+		<!-- 		
+		<table id="deleteTable">
+			<tr class="headers">
 				<th>Nº de Usuario</th>
+				<th>Fecha de Ingreso</th>
+				<th>Nº de Receta</th>
 				<th>Médico</th>
 				<th>Fecha en la Receta</th>
 			</tr>
 
 			<tr>
-				<th id="prescription_id"></th>
-				<th id="prescription_date"></th>
 				<th id="user_id"></th>
-				<th id="doctor"></th>
 				<th id="created_date"></th>
+				<th id="prescription_id"></th>
+				<th id="doctor"></th>
+				<th id="prescription_date"></th>
 			</tr>
 
 		</table>
@@ -67,25 +112,24 @@
 			
 
 		</table>
+ -->
 
+
+		<br>
+		<a href="../index.html" class="button-return">
+			<span>Volver al menú</span>
+		</a>
+		<br>
+		<a href="../users/usersMenu.html" class="button-return">
+			<span>Ir a Usuarios</span>
+		</a>
+		<br>
+		<a href="prescriptionsMenu.html" class="button-return">
+			<span>Volver a Recetas</span>
+		</a>
+		
 
 	</div>
-
-	
-    <h3>
-    	<a href="../index.html">Volver al menú</a>
-    </h3>
-    
-
-    <h3>
-    	<a href="../users/usersMenu.html">Ir a Usuarios</a>
-	</h3>
-
-
-	<h3>
-		<a href="prescriptionsMenu.html">Volver a Recetas</a>
-	</h3>
-
 
 	<footer><a href="https://github.com/EzequielRomio" target="_blank" id="footer-link">Creado por Ezequiel Romio</a>&nbsp; &nbsp; &nbsp; &nbsp; </footer>
 
