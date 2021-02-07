@@ -20,58 +20,74 @@ function showPrescription (data) {
 	notes.innerHTML = data["notes"];
 }
 
+
 document.addEventListener("DOMContentLoaded", function() {
 	
-	const userIdInput = document.getElementById("userIdInput")
-	const prescriptionIdInput = document.getElementById("prescriptionIdInput")
+	const userIdInput = document.getElementById("userIdInput");
+	const prescriptionIdInput = document.getElementById("prescriptionIdInput");
+	const table = document.getElementById("deleteTable"); 
 
-	const prescriptionId = document.getElementById("prescription_id")
-	const prescriptionDate = document.getElementById("prescription_date")
-	const userId = document.getElementById("user_id") 
-	const od = document.getElementById("od") 
-	const oi = document.getElementById("oi") 
-	const adittion = document.getElementById("addition") 
-	const doctor = document.getElementById("doctor") 
-	const createdDate = document.getElementById("created_date") 
-	const notes = document.getElementById("notes") 
-	 	
+	const headers = ["user_name", "created_date", "id", "od", "oi", "addition", "prescription_date", "notes", "doctor"];
+
 	userIdInput.addEventListener('keydown', function(e) {
 		if (e.keyCode === 13) {
-			let url = 'http://localhost:5000/users/' + userIdInput.value.toString() + '/prescriptions'
+			let userId = userIdInput.value.toString() 
+			
+			let usersName = ''
+
+			axios.get('http://localhost:5000/users/' + userId, { responseType: 'json'})
+			
+			.then(function(userRes){
+				usersName = userRes.data["name"] + " " + userRes.data["last_name"]
+			})
+
+			let url = 'http://localhost:5000/users/' + userId + '/prescriptions'
 		
 			axios.get(url, { responseType: 'json'})
-		    
-
+			
 		    .then(function(res) {
-		      	
+				console.log(res)
 		      	if(res.status==200) {
-		      		let data = res.data[0]
-		      		if (!data["id"]) {
-		      			console.log(typeof data)
-		      			console.log(data)
+					
+					if (res.data.length === 0) {
 		      			alert("No hay recetas cargadas para ese Usuario")
-		      		} else {
-						prescriptionId.innerHTML = data["id"];
-						prescriptionDate.innerHTML = data["prescription_date"];
-						userId.innerHTML = data["user_id"];
-						od.innerHTML = data["od"];
-						oi.innerHTML = data["oi"];
-						adittion.innerHTML = data["addition"];
-						doctor.innerHTML = data["doctor"];
-						let parsedDate = parseDate(data["created_date"]);
-						createdDate.innerHTML = parsedDate;
-						notes.innerHTML = data["notes"];
+		      		} else {	
+						for (const prescription of res.data) {
+							let row = document.createElement("tr");
+							
+							for (const header of headers) {
+								let value = null;
+								let field = document.createElement("th");
+								if (header === "user_name") {
+									value = document.createTextNode(usersName);	
+								} else if (header === "created_date"){
+									let parsedDate = parseDate(prescription[header]);
+									value = document.createTextNode(parsedDate);
+								} else {
+									value = document.createTextNode(prescription[header]);
+								}
+								field.appendChild(value)
+								row.appendChild(field)
+							
+							}
+							table.appendChild(row)
+						
+						}
 			      	}
 			    }
 		    })
 		    
 		    .catch(function(err) {
-		    	if (err.status === 404) {
-		    		alert("Nº de Usuario inválido");
-		    	}
-		     	console.log(err);
+				if ("response" in err) {
+					if (err.response.status === 404) {
+						alert("Nº de Usuario inválido");
+					}
+					console.log(err.response.status);
+					console.log(err.response.data);
+				}
+		    	
 		    })
-		    		
+	
 		}
 		
 	});
@@ -88,20 +104,18 @@ document.addEventListener("DOMContentLoaded", function() {
 		    .then(function(res2) {
 		      	
 		      	if(res2.status==200) {
-					let data = res2.data
-		      		
-
-					prescriptionId.innerHTML = data["id"];
-					prescriptionDate.innerHTML = data["prescription_date"];
-					userId.innerHTML = data["user_id"];
-					od.innerHTML = data["od"];
-					oi.innerHTML = data["oi"];
-					adittion.innerHTML = data["addition"];
-					doctor.innerHTML = data["doctor"];
-					let parsedDate = parseDate(data["created_date"]);
-					createdDate.innerHTML = parsedDate;
-					notes.innerHTML = data["notes"];
-
+					let prescription = res2.data
+					let row = document.createElement("tr");
+							
+					for (const header of headers) {
+						let field = document.createElement("th");
+						let value = document.createTextNode(prescription[header])
+						field.appendChild(value)
+						row.appendChild(field)
+					
+					}
+					table.appendChild(row)					  
+				
 		        }
 
 		    })
