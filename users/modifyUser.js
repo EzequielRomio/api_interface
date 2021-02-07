@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	const userIdInput = document.getElementById("userIdInput")
 	
 	const userId = document.getElementById("userId")
+	userId.style.textAlign = "right";
+	userId.style.width = "160px";
 	const name = document.getElementById("name")
 	const lastName = document.getElementById("last_name")
 	const email = document.getElementById("email")
@@ -64,8 +66,17 @@ document.addEventListener("DOMContentLoaded", function() {
 		      		confirmButton.className = "buttonEnviar";
 		      		confirmButton.innerHTML = "Modificar Usuario nº " + userIdInput.value.toString();
 		      		confirmButton.style.width = "480px";
-		      		confirmButton.style.marginBottom = "60px";
-		      		deleteUser = document.getElementById("modifyUser");
+					confirmButton.style.marginBottom = "60px";
+				
+					confirmButton.addEventListener('mouseover', function () {
+						confirmButton.style.backgroundColor = "#626edc";
+					});
+					
+					confirmButton.addEventListener('mouseout', function () {
+						confirmButton.style.backgroundColor = "#323edc";
+					});
+				  
+		      		deleteUser = document.getElementById("modifyButton");
 		      		deleteUser.appendChild(confirmButton);
 
 		      		enableInputs();
