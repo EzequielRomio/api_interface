@@ -12,19 +12,20 @@
 	
 	<h1 class="title">Usuarios</h1>
     <hr>
-    <div class="container" id="userData">
-		<h2>Datos de Usuario</h2>
+    <div class="container">
+		<h2 class="subtitle" id="show-user-subtitle">Lista de Usuarios</h2>
 
 		<label for="user_id">Ingrese el numero de Usuario</label>
+		<br>
 		<input type="number" name="user_id" id="userIdInput" min="1">
-
-		<table id="deleteTable">
+		<br>
+		<table>
 			<tr class="headers">
-				<th>Nº de Usuario</th>
+				<th class="id-column">ID</th>
 				<th>Nombre</th>
 				<th>Apellido</th>
 				<th>Correo Electrónico</th>
-				<th>Fecha de Ingreso</th>
+				<th class="date-column">Fecha de Ingreso</th>
 			</tr>
 			<tr>
 				<th id="userId"></th>
@@ -34,23 +35,21 @@
 				<th id="date"></th>
 			</tr>
 		</table>
-
+	
+		<br>
+		<a href="../index.html" class="button-return">
+			<span>Volver al menú</span>
+		</a>
+		<br>
+		<a href="../prescriptions/prescriptionsMenu.html" class="button-return">
+			<span>Ir a Recetas</span>
+		</a>
+		<br>
+		<a href="usersMenu.html" class="button-return">
+			<span>Volver a Usuarios</span>
+		</a>
+	
 	</div>
-
-	<h5 id="demo"></h5>
-    <h3>
-    	<a href="../index.html">Volver al menú</a>
-    </h3>
-    
-
-    <h3>
-    	<a href="../prescriptions/prescriptionsMenu.html">Ir a Recetas</a>
-	</h3>
-
-
-	<h3>
-		<a href="usersMenu.html">Volver a Usuarios</a>
-	</h3>
 
 	<footer><a href="https://github.com/EzequielRomio" target="_blank" id="footer-link">Creado por Ezequiel Romio</a>&nbsp; &nbsp; &nbsp; &nbsp; </footer>
 
