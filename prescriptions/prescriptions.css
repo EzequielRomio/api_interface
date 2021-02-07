@@ -119,3 +119,19 @@ tr:nth-child(even) {
 	align-self: center;
 	margin-bottom: 20px; 
 }
+
+#od-column {
+	width: 180px;
+}
+
+#oi-column {
+	width: 180px;
+}
+
+#notes-column {
+	width: 80px;
+}
+
+#add-column {
+	width: min-content;
+}
