@@ -1,3 +1,12 @@
+function parseDate(dateStr) {
+	// sample 2020-11-23 16:26:12
+	let dateSchedule = dateStr.split(" ");
+	let splitedDate = dateSchedule[0].split("-");
+	result = splitedDate[2] + '/' + splitedDate[1] + '/' + splitedDate[0] + ' ';
+	result += dateSchedule[1]
+	return result;
+}
+
 function showPrescription (data) {
 	prescriptionId.innerHTML = data["id"];
 	prescriptionDate.innerHTML = data["prescription_date"];
@@ -6,7 +15,8 @@ function showPrescription (data) {
 	oi.innerHTML = data["oi"];
 	adittion.innerHTML = data["addition"];
 	doctor.innerHTML = data["doctor"];
-	createdDate = data["created_date"];
+	let parsedDate = parseDate(data["created_date"]);
+	createdDate = parsedDate;
 	notes.innerHTML = data["notes"];
 }
 
@@ -48,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
 						oi.innerHTML = data["oi"];
 						adittion.innerHTML = data["addition"];
 						doctor.innerHTML = data["doctor"];
-						createdDate.innerHTML = data["created_date"];
+						let parsedDate = parseDate(data["created_date"]);
+						createdDate.innerHTML = parsedDate;
 						notes.innerHTML = data["notes"];
 			      	}
 			    }
@@ -77,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		    .then(function(res2) {
 		      	
 		      	if(res2.status==200) {
-		      		let data = res2.data
+					let data = res2.data
 		      		
 
 					prescriptionId.innerHTML = data["id"];
@@ -87,7 +98,8 @@ document.addEventListener("DOMContentLoaded", function() {
 					oi.innerHTML = data["oi"];
 					adittion.innerHTML = data["addition"];
 					doctor.innerHTML = data["doctor"];
-					createdDate.innerHTML = data["created_date"];
+					let parsedDate = parseDate(data["created_date"]);
+					createdDate.innerHTML = parsedDate;
 					notes.innerHTML = data["notes"];
 
 		        }
