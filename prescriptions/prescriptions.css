@@ -135,3 +135,7 @@ tr:nth-child(even) {
 #add-column {
 	width: min-content;
 }
+
+#user-column {
+	width: 160px;
+}
