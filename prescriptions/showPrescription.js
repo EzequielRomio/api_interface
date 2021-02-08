@@ -21,6 +21,10 @@ function showPrescription (data) {
 }
 
 
+/*To Do:
+	resolve with a promise the way to show user's name when the prescription data is requiered 
+*/
+
 document.addEventListener("DOMContentLoaded", function() {
 	
 	const userIdInput = document.getElementById("userIdInput");
@@ -63,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
 								} else if (header === "created_date"){
 									let parsedDate = parseDate(prescription[header]);
 									value = document.createTextNode(parsedDate);
+								} else if (header === "id") {
+									field.style.textAlign = "right";
+									value = document.createTextNode(prescription[header]);
 								} else {
 									value = document.createTextNode(prescription[header]);
 								}
@@ -95,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	prescriptionIdInput.addEventListener("keydown", function(e) {
 		if (e.keyCode === 13) {
-
 			let url = 'http://localhost:5000/prescriptions/' + prescriptionIdInput.value.toString()
 			
 			axios.get(url, { responseType: 'json'})
@@ -106,16 +112,39 @@ document.addEventListener("DOMContentLoaded", function() {
 		      	if(res2.status==200) {
 					let prescription = res2.data
 					let row = document.createElement("tr");
+					let userId = res2.data["user_id"]
+					let usersName = ''
+					
+					axios.get('http://localhost:5000/users/' + userId, { responseType: 'json'})
+			
+					.then(function(userRes){
+						console.log(userRes.data)
+						usersName = userRes.data["name"] + " " + userRes.data["last_name"]
+					})
 							
 					for (const header of headers) {
 						let field = document.createElement("th");
-						let value = document.createTextNode(prescription[header])
+						let value = null;
+						console.log(usersName)
+						if (header === "user_name") {
+							value = document.createTextNode("");
+							field.setAttribute('id', 'users-name')
+							console.log(field)	
+						} else if (header === "date"){
+							let parsedDate = parseDate(prescription[header])
+							value = document.createTextNode(parsedDate)
+						} else if (header === "id") {
+							field.style.textAlign = "right";
+							value = document.createTextNode(prescription[header]);
+						} else {
+							value = document.createTextNode(prescription[header])
+						}
 						field.appendChild(value)
 						row.appendChild(field)
 					
 					}
-					table.appendChild(row)					  
-				
+					table.appendChild(row)
+
 		        }
 
 		    })
@@ -128,8 +157,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		    })
 		    
 		}
-
-
 
 	});
 
