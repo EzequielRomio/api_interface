@@ -139,3 +139,18 @@ tr:nth-child(even) {
 #user-column {
 	width: 160px;
 }
+
+#show-users-name {
+	background-color: #3d47d1;
+	font-weight: bold;
+	color: #fff;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 60px;
+	padding: 2% 2% 2% 2%;
+	/* min-width: 260; */
+	/* width: 460px; */
+	margin: 2px 0px 20px 0px;
+	border-radius: 5px 5px;
+}

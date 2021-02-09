@@ -34,8 +34,12 @@ var newPrescription = {
 
 document.addEventListener("DOMContentLoaded", function() {
 	
+	const userId = document.getElementById("user_id");
 	const buttonEnviar = document.querySelector('.buttonEnviar')
-	
+	const enviarPrescription = document.getElementById('enviarPrescription');
+	const showUsersName = document.getElementById("show-users-name");
+	let usersNamePrinted = false;
+
 	buttonEnviar.addEventListener('mouseover', function () {
 		buttonEnviar.style.backgroundColor = "#626edc";
 	});
@@ -44,8 +48,42 @@ document.addEventListener("DOMContentLoaded", function() {
 		buttonEnviar.style.backgroundColor = "#323edc";
 	});
 
+	userId.addEventListener('blur', function() {
+		console.log(userId.value)
+		let url = 'http://localhost:5000/users/' + userId.value.toString()
+		
+			axios.get(url, { responseType: 'json'})
+		    
+		    .then(function(res) {
+		      	
+		      	if(res.status==200) {
+					if (usersNamePrinted) {
+						showUsersName.removeChild(showUsersName.firstChild)
+						usersNamePrinted = false;	
+					}
+					let userNameLastname = res.data["name"] + " " + res.data["last_name"];
+					let userCompleteName = document.createTextNode(userNameLastname);
+					showUsersName.appendChild(userCompleteName);
+					usersNamePrinted = true;
+				};
+			})
+
+			.catch(function(err) {
+				console.log(err.response.status)
+				if (err.response.status === 404) {
+					alert('Número de Usuario inválido')
+					if (usersNamePrinted) {
+						showUsersName.removeChild(showUsersName.firstChild)
+						usersNamePrinted = false;	
+					}
+				};
+					
+			});
+		
+
+	})
+
 	//const userData = document.getElementById('createUserForm');
-	const enviarPrescription = document.getElementById('enviarPrescription');
 		
 	enviarPrescription.addEventListener('click', function(){
 		
