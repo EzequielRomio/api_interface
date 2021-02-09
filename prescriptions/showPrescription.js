@@ -33,9 +33,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	const headers = ["user_name", "created_date", "id", "od", "oi", "addition", "prescription_date", "notes", "doctor"];
 
+	let thCounter = 0;
+	let userId = 0;
+	let tableHaschild = false;
+
 	userIdInput.addEventListener('keydown', function(e) {
 		if (e.keyCode === 13) {
-			let userId = userIdInput.value.toString() 
+			userId = userIdInput.value.toString() 
 			
 			let usersName = ''
 
@@ -52,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		    .then(function(res) {
 				console.log(res)
 		      	if(res.status==200) {
-					
+					let tablechilds = []
 					if (res.data.length === 0) {
 		      			alert("No hay recetas cargadas para ese Usuario")
 		      		} else {	
@@ -75,12 +79,27 @@ document.addEventListener("DOMContentLoaded", function() {
 								}
 								field.appendChild(value)
 								row.appendChild(field)
-							
+								
 							}
-							table.appendChild(row)
-						
+							
+							tablechilds.unshift(row)
+	
 						}
-			      	}
+						if (!tableHaschild) {
+							for (child of tablechilds) {
+							table.appendChild(child)
+							}
+							tableHaschild = true;
+						} else {
+							for (child of tablechilds) {
+							table.insertBefore(child, table.childNodes[2])
+							}
+						}
+
+						// for (let ix=tablechilds.length - 1; ix >= 0; ix--) {
+						// 	table.appendChild(tablechilds[ix])
+						// }
+					}
 			    }
 		    })
 		    
@@ -103,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	prescriptionIdInput.addEventListener("keydown", function(e) {
 		if (e.keyCode === 13) {
 			let url = 'http://localhost:5000/prescriptions/' + prescriptionIdInput.value.toString()
-			
+						
 			axios.get(url, { responseType: 'json'})
 		    
 
@@ -112,23 +131,29 @@ document.addEventListener("DOMContentLoaded", function() {
 		      	if(res2.status==200) {
 					let prescription = res2.data
 					let row = document.createElement("tr");
-					let userId = res2.data["user_id"]
+					userId = res2.data["user_id"]
 					let usersName = ''
 					
-					axios.get('http://localhost:5000/users/' + userId, { responseType: 'json'})
-			
-					.then(function(userRes){
-						console.log(userRes.data)
-						usersName = userRes.data["name"] + " " + userRes.data["last_name"]
-					})
-							
+					if (userId) {
+						axios.get('http://localhost:5000/users/' + userId, { responseType: 'json'})
+						
+						.then(function(userRes){
+							usersName = userRes.data["name"] + " " + userRes.data["last_name"];
+
+							let nameAux = document.getElementById("users-name" + (thCounter - 1).toString())
+							let txt = document.createTextNode(usersName) 
+							nameAux.appendChild(txt);
+						})
+					}
+									
 					for (const header of headers) {
 						let field = document.createElement("th");
 						let value = null;
 						console.log(usersName)
 						if (header === "user_name") {
 							value = document.createTextNode("");
-							field.setAttribute('id', 'users-name')
+							field.setAttribute('id', 'users-name' + thCounter.toString());
+							thCounter += 1;
 							console.log(field)	
 						} else if (header === "date"){
 							let parsedDate = parseDate(prescription[header])
@@ -141,12 +166,13 @@ document.addEventListener("DOMContentLoaded", function() {
 						}
 						field.appendChild(value)
 						row.appendChild(field)
-					
+						//row.insertBefore(field, row.firstChild)
 					}
 					table.appendChild(row)
-
+					//table.insertBefore(row, table.firstChild)
 		        }
 
+				
 		    })
 		    
 		    .catch(function(err2) {
@@ -155,7 +181,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		    	}
 		     	console.log(err2);
 		    })
-		    
+			
+
 		}
 
 	});
