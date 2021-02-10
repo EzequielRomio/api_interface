@@ -105,6 +105,13 @@ tr:nth-child(even) {
 	background-size: 12%;
 }
 
+#modify-prescription-subtitle {
+	background-image: url("../images/modify_prescription.png");
+	background-repeat: no-repeat;
+	background-position: 86% 25%;
+	background-size: 12%;
+}
+
 #userIdInput {
 	margin-bottom: 20px;
 }
