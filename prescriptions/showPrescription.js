@@ -81,9 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
 								row.appendChild(field)
 								
 							}
-							
-							tablechilds.unshift(row)
-	
+							if (!tableHaschild) {
+								tablechilds.unshift(row)
+							} else {
+								tablechilds.push(row)
+							}
 						}
 						if (!tableHaschild) {
 							for (child of tablechilds) {
