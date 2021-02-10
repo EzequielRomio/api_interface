@@ -46,11 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	userIdInput.addEventListener('keydown', function(e) {
 		if (e.keyCode === 13) {
 			if (fieldsCompleted) {
-				userId.removeChild(userId.firstChild);// = data["id"];
-				name.removeChild(name.firstChild);// = data["name"];
-				lastName.removeChild(lastName.firstChild); // = data["last_name"];
-				email.removeChild(email.firstChild); // = data["email"];
-				password.removeChild(password.firstChild);//= "* * * * * * * *";
+				userId.removeChild(userId.firstChild);
+				name.removeChild(name.firstChild);
+				lastName.removeChild(lastName.firstChild);
+				email.removeChild(email.firstChild);
+				password.removeChild(password.firstChild);
 				confirmButton.remove();
 			}
 
