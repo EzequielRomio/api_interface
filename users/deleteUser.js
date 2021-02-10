@@ -17,12 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	const email = document.getElementById("email")
 	const date = document.getElementById("date")
 	 	
-	let buttonPressed = false;
+	let fieldsCompleted = false;
 
 	userIdInput.addEventListener('keydown', function(e) {
-		if (e.keyCode === 13 && !buttonPressed) {
+		if (e.keyCode === 13) {
+			if (fieldsCompleted) {
+				userId.removeChild(userId.firstChild);
+				name.removeChild(name.firstChild);
+				lastName.removeChild(lastName.firstChild);
+				email.removeChild(email.firstChild);
+				date.removeChild(date.firstChild);
+				confirmButton.remove();
+			}
+
 			let url = 'http://localhost:5000/users/' + userIdInput.value.toString()
-			buttonPressed = true;
+			
 			axios.get(url, { responseType: 'json'})
 		    
 
@@ -36,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		      		email.innerHTML = data["email"];
 					let parsedDate = parseDate(data["date"]);  
 					date.innerHTML = parsedDate;
-		    		
+					fieldsCompleted = true;
 
 		      		confirmButton = document.createElement("button");
 		      		confirmButton.setAttribute("type", "button");
@@ -66,27 +75,23 @@ document.addEventListener("DOMContentLoaded", function() {
 		        				alert("Usuario Eliminado");
 		        				location.reload();
 		        			}
-		        		})
+						});
 
-		        	})
+		        	});
 		        }
 		    
 				
 		    })
 		    
 		    .catch(function(err) {
-		     	console.log(err);
+				console.log(err);
+				fieldsCompleted = false;
+				alert("N° de Usuario inválido") 
 		    })
 		    
 		
 		
-		} else if (buttonPressed) { 
-
-			location.reload()
-
-		}
-		
-		
+		}		
 	});
 		
 });
