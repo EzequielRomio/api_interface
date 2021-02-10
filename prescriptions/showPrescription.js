@@ -168,7 +168,12 @@ document.addEventListener("DOMContentLoaded", function() {
 						row.appendChild(field)
 						//row.insertBefore(field, row.firstChild)
 					}
-					table.appendChild(row)
+					if (!tableHaschild) {
+						table.appendChild(row)
+						tableHaschild = true;
+					} else {
+						table.insertBefore(row, table.childNodes[2]);
+					}
 					//table.insertBefore(row, table.firstChild)
 		        }
 
