@@ -146,6 +146,12 @@ document.addEventListener("DOMContentLoaded", function() {
 							let txt = document.createTextNode(usersName) 
 							nameAux.appendChild(txt);
 						})
+						.catch(function(userError) {
+							let nameAux = document.getElementById("users-name" + (thCounter - 1).toString())
+							let txt = document.createTextNode("Usuario Eliminado") 
+							nameAux.appendChild(txt);
+
+						})
 					}
 									
 					for (const header of headers) {
