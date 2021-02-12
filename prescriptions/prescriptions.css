@@ -161,3 +161,7 @@ tr:nth-child(even) {
 	margin: 2px 0px 20px 0px;
 	border-radius: 5px 5px;
 }
+
+.null-width-input {
+	width: max-content;
+}
