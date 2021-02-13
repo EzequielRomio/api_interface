@@ -112,6 +112,15 @@ tr:nth-child(even) {
 	background-size: 12%;
 }
 
+
+#delete-prescription-subtitle {
+	background-image: url("../images/delete_prescription.png");
+	background-repeat: no-repeat;
+	background-position: 86% 50%;
+	background-size: 12%;
+}
+
+
 #userIdInput {
 	margin-bottom: 20px;
 }
