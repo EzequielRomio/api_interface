@@ -35,9 +35,9 @@ function getDataToModify () {
 document.addEventListener("DOMContentLoaded", function() {
 	
 	const prescriptionIdInput = document.getElementById("prescriptionIdInput");
-	const table = document.getElementById("modifyTable"); 
+	//const table = document.getElementById("modifyTable"); 
 
-	const headers = ["user_name", "id", "od", "oi", "addition", "prescription_date", "notes", "doctor"];
+	//const headers = ["user_name", "id", "od", "oi", "addition", "prescription_date", "notes", "doctor"];
 
 	const userColumn = document.getElementById("user-column");
 	const odColumn = document.getElementById("od-column");
@@ -46,13 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	const prescriptionDateColumn = document.getElementById("prescription-date-column");
 	const notesColumn = document.getElementById("notes-column");
 	const doctorColumn = document.getElementById("doctor-column");
-
-	// <th><input type="text" class="null-width-input" id="newOd" disabled></th>
-	// <th><input type="text" class="null-width-input" id="newOi" disabled></th>
-	// <th><input type="text" class="null-width-input" id="newAdd" disabled></th>
-	// <th><input type="text" class="null-width-input" id="newDate" disabled></th>
-	// <th><input type="text" class="null-width-input" id="newNotes" disabled></th>
-	// <th><input type="text" class="null-width-input" id="newDoctor" disabled></th>
 
 	const newOd = document.getElementById("newOd");
 	const newOi = document.getElementById("newOi");
@@ -66,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	prescriptionIdInput.addEventListener("keydown", function(e) {
 		if (e.keyCode === 13) {
+			if (buttonEnabled) {
+				confirmButton.remove()
+			}
+
 			let url = 'http://localhost:5000/prescriptions/' + prescriptionIdInput.value.toString()
 						
 			axios.get(url, { responseType: 'json'})
@@ -100,28 +97,29 @@ document.addEventListener("DOMContentLoaded", function() {
 					notesColumn.innerHTML = prescription["notes"];
 					doctorColumn.innerHTML = prescription["doctor"];
 
-					if (!buttonEnabled) {
-						confirmButton = document.createElement("button");
-						confirmButton.setAttribute("type", "button");
-						confirmButton.className = "buttonEnviar";
-						confirmButton.innerHTML = "Modificar Receta nº " + prescriptionIdInput.value.toString();
-						confirmButton.style.width = "480px";
-						confirmButton.style.marginBottom = "60px";
 					
-						buttonEnabled = true;
+					confirmButton = document.createElement("button");
+					confirmButton.setAttribute("type", "button");
+					confirmButton.className = "buttonEnviar";
+					
+					confirmButton.style.width = "480px";
+					confirmButton.style.marginBottom = "60px";
+				
+					buttonEnabled = true;
 
-						confirmButton.addEventListener('mouseover', function () {
-							confirmButton.style.backgroundColor = "#626edc";
-						});
-						
-						confirmButton.addEventListener('mouseout', function () {
-							confirmButton.style.backgroundColor = "#323edc";
-						});
+					confirmButton.addEventListener('mouseover', function () {
+						confirmButton.style.backgroundColor = "#626edc";
+					});
 					
-						const modifyButton = document.getElementById("modifyButton");
-						modifyButton.appendChild(confirmButton);
-						enableInputs();
-					}
+					confirmButton.addEventListener('mouseout', function () {
+						confirmButton.style.backgroundColor = "#323edc";
+					});
+				
+					const modifyButton = document.getElementById("modifyButton");
+					modifyButton.appendChild(confirmButton);
+					enableInputs();
+				
+					confirmButton.innerHTML = "Modificar Receta nº " + prescriptionIdInput.value.toString();
 
 					confirmButton.addEventListener('click', function(e) {
 
