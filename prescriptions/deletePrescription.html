@@ -5,32 +5,64 @@
 	<title>Eliminar Receta</title>
 	<link rel="stylesheet" type="text/css" href="../main.css">
 	<link rel="stylesheet" type="text/css" href="prescriptions.css">
-	<script type="text/javascript" src="../main.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="deletePrescription.js"></script>
+	<!-- <script type="text/javascript" src="../main.js"></script> -->
 </head>
 <body>
 	<h1 class="title">Recetas</h1>
 	<hr>
-
+	
 	<div class="container">
-		<h2>Eliminar receta</h2>
+		<h2 class="subtitle" id="delete-prescription-subtitle">Eliminar Receta</h2>
+
+		<label for="prescription_id">Ingrese el numero de Receta</label>
+		<br>
+		<input type="number" name="prescription_id" id="prescriptionIdInput" min="1">
+		<br>
+
+		<table id="deleteTable">
+			<tr class="headers">
+				<th>Usuario</th>
+				<th>Ojo Derecho</th>
+				<th>Ojo Izquierdo</th>
+				<th>Adición</th>
+				<th>Fecha en la Receta</th>
+				<th>Observaciones</th>
+				<th>Médico</th>
+			</tr>
+
+			<tr>
+				<th id="user-column"></th>
+				<th id="od-column"></th>
+				<th id="oi-column"></th>
+				<th id="add-column"></th>
+				<th id="prescription-date-column"></th>
+				<th id="notes-column"></th>
+				<th id="doctor-column"></th>
+			</tr>
+			
+		</table>
+
+		<br>
+		<div id="deleteButton"></div>
+
+
+
+		<a href="../index.html" class="button-return">
+			<span>Volver al menú</span>
+		</a>
+		<br>
+		<a href="../users/usersMenu.html" class="button-return">
+			<span>Ir a Usuarios</span>
+		</a>
+		<br>
+		<a href="prescriptionsMenu.html" class="button-return">
+			<span>Volver a Recetas</span>
+		</a>
+
 
 	</div>
-
-	
-    <h3>
-    	<a href="../index.html">Volver al menú</a>
-    </h3>
-    
-
-    <h3>
-    	<a href="../users/usersMenu.html">Ir a Usuarios</a>
-	</h3>
-
-
-	<h3>
-		<a href="prescriptionsMenu.html">Volver a Recetas</a>
-	</h3>
-
 
 	<footer><a href="https://github.com/EzequielRomio" target="_blank" id="footer-link">Creado por Ezequiel Romio</a>&nbsp; &nbsp; &nbsp; &nbsp; </footer>
 
