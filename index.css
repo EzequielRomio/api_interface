@@ -7,9 +7,9 @@
 }
 
 #separator-line {
-	margin-top: 2%;
-	margin-bottom: 2%;
-	width: 4px;
+	/* margin-top: 1%;
+	margin-bottom: 1%; */
+	width: 40px;
 	background-color: #ccc;
 }
 
