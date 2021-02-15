@@ -1,3 +1,15 @@
+
+function parseDate(dateStr) {
+	// sample 2020-11-23 16:26:12
+	let dateSchedule = dateStr.split(" ");
+	let splitedDate = dateSchedule[0].split("-");
+	result = splitedDate[2] + '/' + splitedDate[1] + '/' + splitedDate[0] + ' ';
+	result += dateSchedule[1]
+	return result;
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
 	
 	const userIdInput = document.getElementById("userIdInput")
@@ -23,8 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		      		userId.innerHTML = data["id"];
 		      		name.innerHTML = data["name"];
 		      		lastName.innerHTML = data["last_name"];
-		      		email.innerHTML = data["email"];
-		      		date.innerHTML = data["date"];
+					email.innerHTML = data["email"];
+					let parsedDate = parseDate(data["date"]);  
+		      		date.innerHTML = parsedDate;
 		        }
 		    })
 		    
@@ -35,11 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		     	console.log(err);
 		    })
 		    
-		    .then(function() {
-		     	console.log('none');
-		    });
-		
-		
 		}
 		
 	});

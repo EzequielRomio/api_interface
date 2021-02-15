@@ -1,17 +1,20 @@
-a {
-	font-family: arial;
+
+#main-page {
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #eee;
+	margin: 100px 40px 40px 40px;
+}
+
+#separator-line {
+	/* margin-top: 1%;
+	margin-bottom: 1%; */
+	width: 40px;
+	background-color: #ccc;
+}
+
+.main-page-links {
+	padding: 5% 5% 0% 5%;
 }
 
 
-#mainTitle {
-	width: 700px;
-}
-
-#hrMainTitle {
-	width: 900px;
-}
-
-.links {
-	text-align: left;
-	margin-left: 166px;
-}

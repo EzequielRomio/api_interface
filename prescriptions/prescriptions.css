@@ -1,98 +1,84 @@
-#createPrescription {
-	height: 680px;
-}
 
-#modifyPrescription {
-	height: 640px;
-}
-
-
-#notesFrame {
-	width: 100%;
-	text-align: center;
-}
-
-#notesTable {
-	margin-bottom: 200px;
-}
-
-.graduation {
-	width: 33.3%;
-}
-table {
-	border-collapse: collapse;
-	width: 100.1%;
-}
-
-td, th {
-  border: 4px solid #101010;
-  text-align: left;
-  padding: 8px;
-}
-
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.headers {
-	background-color: #727efc;
-}
-
-.modifyInput {
-	width: 96%;
-
-}
-
-
-#createUser {
-	opacity: 0.8;
-	margin-top: 50px;
-	background-color: #ccc;
-	background-image: url("../prescription.png");
-	background-size: 25% 25%;
-	background-position: 0% 97%;
+#create-prescription-subtitle {
+	background-image: url("../images/create_prescription.png");
 	background-repeat: no-repeat;
-	width: 700px;
-	margin-left: 5%;
-	height: 500px;
-	border: 4px solid #101010;
-/* Aplica exclusivamente al id container */
-
+	background-position: 86% 25%;
+	background-size: 12%;
 }
 
-#usersList {
-	width: 90%;
-	height: 100%;
-	background-image: none;
-
+#show-prescription-subtitle {
+	background-image: url("../images/show_prescriptions.png");
+	background-repeat: no-repeat;
+	background-position: 86% 25%;
+	background-size: 12%;
 }
 
-#prescriptionData {
-	width: 90%;
-	height: 100%;
+#modify-prescription-subtitle {
+	background-image: url("../images/modify_prescription.png");
+	background-repeat: no-repeat;
+	background-position: 86% 25%;
+	background-size: 12%;
 }
+
+
+#delete-prescription-subtitle {
+	background-image: url("../images/delete_prescription.png");
+	background-repeat: no-repeat;
+	background-position: 86% 50%;
+	background-size: 12%;
+}
+
 
 #userIdInput {
 	margin-bottom: 20px;
 }
 
-#deleteUser {
-	width: 90%;
-	height: 500px;
+#prescriptionIdInput {
+	margin-bottom: 40px;
 }
 
-#deleteTable {
-	margin-top: 40px;
+#userData {
+	display: inline-block;
+	width: max-content;
+	align-self: center;
+	margin-bottom: 20px; 
 }
 
-#modifyTable {
-	margin-top: 40px;
-	margin-bottom: 160px;
+#od-column {
+	width: 180px;
 }
 
+#oi-column {
+	width: 180px;
+}
 
-#modifyUser {
-	height: 100%;
-	width: 90%;
+#notes-column {
+	width: 80px;
+}
+
+#add-column {
+	width: min-content;
+}
+
+#user-column {
+	width: 160px;
+}
+
+#show-users-name {
+	background-color: #3d47d1;
+	font-weight: bold;
+	color: #fff;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 60px;
+	padding: 2% 2% 2% 2%;
+	/* min-width: 260; */
+	/* width: 460px; */
+	margin: 2px 0px 20px 0px;
+	border-radius: 5px 5px;
+}
+
+.null-width-input {
+	width: max-content;
 }
