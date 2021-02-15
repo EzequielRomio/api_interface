@@ -22,22 +22,6 @@ a {
 	color: #323edc;
 } 
 
-hr {
-	margin: 10px 0px 0px 0px;
-	height: 60px;
-	background-image: linear-gradient(rgba(0,92,230,1), rgba(255, 255, 255,1));
-}
-
-
-ul {
-	text-align: left;
-}
-
-
-form {
-	text-align: left;
-	margin-left: 30%;
-}
 
 input {
 	width: 220px;
@@ -45,10 +29,6 @@ input {
 }
 
 .container {
-	/* margin-left: 10px;
-	margin-right: 10px; */
-	/* margin-top: 20px; */
-	/* padding-top: 100px; */
 	padding-bottom: 40px;
 	background-color: #ccc;
 	border-top: 1px solid #aaa;
