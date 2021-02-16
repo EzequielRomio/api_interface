@@ -24,3 +24,7 @@ _Website for Opticians & Optometrist data registry_
 
 ### Request Prescription's by user's id and check patient's record  
 ![](images/md-show-prescr.png)
+
+### Installation 🔧
+ - Install & run _users_api_ from https://github.com/EzequielRomio/users_api
+ - Open ```index.html``` with your favourite browser
